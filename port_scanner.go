@@ -28,7 +28,7 @@ func main() {
 
 	var wg sync.WaitGroup
 	open_ports := make(map[int]bool)
-	// connect to the server on all ports in a loop
+	// try to connect to the server on all ports in a loop
 	for i := 1; i <= thread_count; i++ {
 		ports_per_thread := int(math.Ceil(float64(max_port) / float64(thread_count)))
 		start_port := (i - 1) * ports_per_thread
